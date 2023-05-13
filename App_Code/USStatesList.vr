@@ -1,0 +1,53 @@
+Using System
+Using System.Data 
+Using System.Web.UI.WebControls
+Using System.Web
+
+BegClass USStatesList Access(*Public) Extends(System.Object) 
+
+    DclDB DGDB DBName("*Public/DG NET Local") 
+
+    DclDiskFile  States              +
+          Type(*Input )            +
+          Org(*Indexed)            +
+          Prefix(States_)          +
+          File("Examples/States")  +
+          DB(DGDB)                +
+          ImpOpen(*No)  
+
+    BegConstructor Access(*Public)
+        DclSrParm DGDB Type(ASNA.VisualRPG.Runtime.Database) 
+
+        *This.DGDB = DGDB
+    EndConstructor
+
+    BegFunc GetList Type(ListItemCollection) Access(*Public) 
+        DclFld Result Type(ListItemCollection) New()
+        
+        OpenData()
+
+        Read States
+        DoWhile (NOT States.IsEof)
+            // Either of these may need a ToString() and/or Trim(), 
+            // depending on your data.
+            Result.Add(*New ListItem(States_State.Trim(), States_Abbrev))
+            Read States
+        EndDo 
+
+        CloseData()
+
+        LeaveSr Result 
+    EndFunc          
+
+    BegSr OpenData 
+        If (NOT DGDB.IsOpen) 
+            Connect DGDB 
+        EndIf     
+        Open States
+    EndSr
+
+    BegSr CloseData
+        Close *All 
+    EndSr          
+
+EndClass

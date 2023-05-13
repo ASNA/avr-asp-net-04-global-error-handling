@@ -1,0 +1,91 @@
+﻿Using System
+
+BegClass AppStateHelpers Access(*Public)
+    DclFld Context Type(System.Web.HttpContext) 
+
+	BegConstructor Access(*Public)
+        DclSrParm Context Type(System.Web.HttpContext) 
+
+        *This.Context = Context
+	EndConstructor
+
+    BegFunc GetSessionValue Type(*Object) Access(*Public) 
+        DclSrParm Key Type(*String) 
+
+        If Context.Session[Key] = *Nothing
+            Throw *New ArgumentException(String.Format("Session state value '{0}' is null", Key)) 
+        EndIf
+        
+        LeaveSr Context.Session[Key]
+    EndFunc 
+
+    BegFunc GetSessionValueThenRemove Type(*Object) Access(*Public) 
+        DclSrParm Key Type(*String) 
+
+        DclFld Result Type(*Object) 
+
+        Result = GetSessionValue(Key) 
+
+        Context.Session.Remove('key') 
+        
+        LeaveSr Result 
+    EndFunc 
+
+    BegFunc GetSessionValueAsString Type(*String) Access(*Public) 
+        DclSrParm Key Type(*String) 
+
+        LeaveSr GetSessionValue(key).ToString() 
+    EndFunc 
+
+    BegFunc GetSessionValueAsInt32 Type(*Integer4) Access(*Public) 
+        DclSrParm Key Type(*String) 
+
+        LeaveSr Convert.ToInt32(GetSessionValue(key))
+    EndFunc 
+
+    BegFunc GetSessionValueAsStringThenRemove Type(*String) Access(*Public) 
+        DclSrParm Key Type(*String) 
+
+        DclFld Result Type(*String) 
+
+        Result = GetSessionValue(Key).ToString()
+        Context.Session.Remove(Key) 
+        LeaveSr Result 
+    EndFunc 
+
+    BegFunc GetSessionValueAsInt32ThenRemove Type(*Integer4) Access(*Public) 
+        DclSrParm Key Type(*String) 
+
+        DclFld Result Type(*Integer4) 
+
+        Result = Convert.ToInt32(GetSessionValue(key))
+        Context.Session.Remove(Key) 
+        LeaveSr Result 
+    EndFunc 
+
+
+    // Application values.
+
+    BegFunc GetApplicationValue Type(*Object) Access(*Public) 
+        DclSrParm Key Type(*String) 
+
+        If Context.Application[Key] = *Nothing
+            Throw *New ArgumentException(String.Format("Application state value '{0}' is null", Key)) 
+        EndIf
+        
+        LeaveSr Context.Application[Key]
+    EndFunc 
+
+    BegFunc GetApplicationValueAsString Type(*String) Access(*Public) 
+        DclSrParm Key Type(*String) 
+
+        LeaveSr GetApplicationValue(key).ToString() 
+    EndFunc 
+
+    BegFunc GetApplicationValueAsInt32 Type(*String) Access(*Public) 
+        DclSrParm Key Type(*String) 
+
+        LeaveSr Convert.ToInt32(GetApplicationValue(key))
+    EndFunc 
+
+EndClass

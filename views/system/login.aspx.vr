@@ -1,0 +1,134 @@
+﻿// This is the code-behind for the Login.aspx page. That page and this code 
+// implement ASP.NET's Forms Authentication for this app. 
+
+// * [Microsoft's Forms Authentication docs](https://support.microsoft.com/en-us/help/301240/how-to-implement-forms-based-authentication-in-your-asp-net-applicatio)
+// * [An old, but good, MS article](https://docs.microsoft.com/en-us/aspnet/web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-cs)
+// * [C# Corner article](https://www.c-sharpcorner.com/UploadFile/fa9d0d/forms-authentication-in-Asp-Net/)
+ 
+Using System
+Using System.Data
+Using System.Collections
+Using System.Web
+Using System.Web.Security
+Using System.Web.UI
+Using System.Web.UI.WebControls
+Using System.Web.UI.WebControls.WebParts
+Using System.Web.UI.HtmlControls
+Using System.Web.Security
+Using System.IO 
+
+// ---
+// ### Caution ###
+// Always deploy secured Web apps with TLS (ie HTTPS). Otherwise passwords are sent
+// from the client to the server in clear text. 
+// ---
+
+BegClass views_login Partial(*Yes) Access(*Public) Extends(System.Web.UI.Page)
+
+    DclDB DGDB 
+
+    BegSr Page_Load Access(*Private) Event(*This.Load)
+        DclSrParm sender Type(*Object)
+        DclSrParm e Type(System.EventArgs)
+
+        *This.Title = 'App Login'
+
+        If System.Configuration.ConfigurationManager.AppSettings["DefaultDBName"].ToLower() = 'local' AND + 
+           System.Configuration.ConfigurationManager.AppSettings["authenticateLocalDB"].ToLower() = 'false'
+
+            FormsAuthentication.RedirectFromLoginPage("local user", rememberme.Checked)
+        EndIf 
+    EndSr
+
+    BegFunc CheckWebUserCredentials  Type(System.Exception) 
+        DclSrParm User     Type(*String) 
+        DclSrParm Password Type(*String) 
+
+        // Check data store for user with given password. 
+        // For example, you create a "user" table in the DataGate local DB  which 
+        // has user_id and hash_password columns (at least). Check this 
+        // table for a user's row and compare the hash_password value against
+        // the hashed value of the password the user provided. 
+
+        // Hard coded value for testing. 
+        If User = 'godzilla' AND Password = 'mothra'
+            LeaveSr *Nothing
+        Else 
+            LeaveSr *New ArgumentException("Web user login failed") 
+        EndIf 
+        
+        // Don't store passwords in plain text! Store only [hashed, salted passwords](https://auth0.com/blog/hashing-passwords-one-way-road-to-security/)
+        // in your data store. 
+    EndFunc 
+    
+    BegFunc CheckIBMiCredentials Type(System.Exception) 
+        DclSrParm User     Type(*String) 
+        DclSrParm Password Type(*String) 
+
+        // Returning *Nothing means the user was authenticated. 
+        // Otherwise, return the exception raised when login failed.
+
+        // For demo purposes, emergency user credentials in case our IBM i 
+        // isn't available. 
+        // -----------------------------------------
+        // Remove this If/EndIf for production code! 
+        // -----------------------------------------
+        DGDB.DBName = Application['dbname'].ToString()
+        DGDB.User = User
+        DGDB.Password = Password
+
+        Try 
+            Connect DGDB 
+        //Catch ex Type(ASNA.DataGate.Common.dgException)
+        Catch ex Type(System.Exception)
+            LeaveSR ex 
+        Finally
+            Disconnect DGDB 
+        EndTry 
+
+        LeaveSr *Nothing 
+    EndFunc 
+
+    BegSr buttonlogin_Click Access(*Private) Event(*This.buttonlogin.Click)
+        DclSrParm sender Type(*Object)
+        DclSrParm e Type(System.EventArgs)
+
+        DclFld ex Type(System.Exception)
+        DclFld authenticateLocalDB Type(*Boolean) 
+
+        // If you're using DataGate for SQL Server add a test for that platform as well.
+        If System.Configuration.ConfigurationManager.AppSettings["DefaultDBName"].ToLower() = 'local'
+            ex = CheckWebUserCredentials(user.Text, password.Text)
+        Else
+            // User either CheckIBMiCredentials or CheckWebUserCredentials:
+            // Check credentials against IBM i.
+            ex = CheckIBMiCredentials(user.Text, password.Text)
+        EndIf
+
+        // The user was validated if no exception was thrown.
+        If ex = *Nothing 
+            // After validating a user, RedirectFromLoginPage redirects
+            // the user to the page requested.
+            FormsAuthentication.RedirectFromLoginPage(user.Text, rememberme.Checked) 
+        Else 
+            // Show a detailed error message only if debug mode is on. 
+            If (context.Current.IsDebuggingEnabled)     
+                loginFailedValidator.ErrorMessage = ex.Message 
+            Else 
+                LoginFailedValidator.ErrorMessage = 'Login failed'
+            EndIf
+        EndIf
+    EndSr
+
+    BegSr loginFailedValidator_ServerValidate Access(*Private) Event(*This.loginFailedValidator.ServerValidate)
+        DclSrParm source Type(*Object)
+        DclSrParm args Type(System.Web.UI.WebControls.ServerValidateEventArgs)
+
+        // In most forms, you'd test some logic here to see if the custom validator 
+        // failed. In this case, if control gets here the page wasn't redirected with the 
+        // FormsAuthentication class which means there is an error. 
+        // This code is executed only if JavaScript is disabled in the browser.
+        args.IsValid = *False 				
+    EndSr
+
+EndClass

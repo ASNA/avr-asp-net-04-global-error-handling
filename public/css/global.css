@@ -1,0 +1,53 @@
+﻿.display-no {
+    display:none;
+}
+
+.error-message {
+    color: red;
+    font-weight: 500;
+    background-color: whitesmoke;
+    border: solid 1px lightgray;
+    padding: 0 6px 3px 6px;
+    margin-top: 5px;
+}
+
+.container {
+    margin-top: 2em !important;
+}
+
+.debug-header {
+    width: 100%;
+    background-color: #f8d7da;
+    padding: .2em;
+    font-size: .6rem;
+}
+
+
+.row-heading {
+    background-color: rgba(32, 32, 32, 1); /* 100% white. Like the Osmonds. */
+    color: white;
+}
+
+.even-odd-container > .data-row:nth-child(odd) {
+    background-color: rgba(51, 170, 51, .1); /*  10% opaque green */
+}
+
+.even-odd-container > .data-row:nth-child(even) {
+    background-color: rgba(224, 224, 224, .3); /* 30% light gray */
+}
+
+.btn-tiny, .btn-group-tiny > .btn {
+    padding: 0.15rem 0.5rem;
+    font-size: 0.675rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
+
+input + span.alert {
+    display: inline-block;
+    margin-top: .2rem !important;
+}
+
+div#panelInput {
+    background-color: lightgoldenrodyellow;
+}
