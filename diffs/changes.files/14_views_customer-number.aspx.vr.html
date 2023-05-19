@@ -1,0 +1,475 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>WinMerge File Compare Report</title>
+<style type="text/css">
+<!--
+table {margin: 0; border: 1px solid #a0a0a0; box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);}
+td,th {word-break: break-all; font-size: 12pt;padding: 0 3px;}
+tr { vertical-align: top; }
+.title {color: white; background-color: blue; vertical-align: top; padding: 4px 4px; background: linear-gradient(mediumblue, darkblue);}
+.sf3b2 {color: #000000; background-color: #ffffff; }
+.sf3b5 {color: #000000; background-color: #0078d7; }
+.sf3b14 {color: #000000; background-color: #ffa0a0; }
+.sf3b16 {color: #000000; background-color: #f1e2ad; }
+.sf3b18 {color: #000000; background-color: #ffaa82; }
+.sf3b19 {color: #000000; background-color: #c8816c; }
+.sf6b2 {color: #ffffff; background-color: #ffffff; }
+.sf6b5 {color: #ffffff; background-color: #0078d7; }
+.sf6b14 {color: #ffffff; background-color: #ffa0a0; }
+.sf6b16 {color: #ffffff; background-color: #f1e2ad; }
+.sf6b18 {color: #ffffff; background-color: #ffaa82; }
+.sf6b19 {color: #ffffff; background-color: #c8816c; }
+.sf7b2 {color: #0000ff; background-color: #ffffff; font-weight: bold; }
+.sf7b5 {color: #0000ff; background-color: #0078d7; font-weight: bold; }
+.sf7b14 {color: #0000ff; background-color: #ffa0a0; font-weight: bold; }
+.sf7b16 {color: #0000ff; background-color: #f1e2ad; font-weight: bold; }
+.sf7b18 {color: #0000ff; background-color: #ffaa82; font-weight: bold; }
+.sf7b19 {color: #0000ff; background-color: #c8816c; font-weight: bold; }
+.sf8b2 {color: #800080; background-color: #ffffff; }
+.sf8b5 {color: #800080; background-color: #0078d7; }
+.sf8b14 {color: #800080; background-color: #ffa0a0; }
+.sf8b16 {color: #800080; background-color: #f1e2ad; }
+.sf8b18 {color: #800080; background-color: #ffaa82; }
+.sf8b19 {color: #800080; background-color: #c8816c; }
+.sf9b2 {color: #008000; background-color: #ffffff; }
+.sf9b5 {color: #008000; background-color: #0078d7; }
+.sf9b14 {color: #008000; background-color: #ffa0a0; }
+.sf9b16 {color: #008000; background-color: #f1e2ad; }
+.sf9b18 {color: #008000; background-color: #ffaa82; }
+.sf9b19 {color: #008000; background-color: #c8816c; }
+.sf10b2 {color: #ff0000; background-color: #ffffff; }
+.sf10b5 {color: #ff0000; background-color: #0078d7; }
+.sf10b14 {color: #ff0000; background-color: #ffa0a0; }
+.sf10b16 {color: #ff0000; background-color: #f1e2ad; }
+.sf10b18 {color: #ff0000; background-color: #ffaa82; }
+.sf10b19 {color: #ff0000; background-color: #c8816c; }
+.sf11b2 {color: #606060; background-color: #ffffff; }
+.sf11b5 {color: #606060; background-color: #0078d7; }
+.sf11b14 {color: #606060; background-color: #ffa0a0; }
+.sf11b16 {color: #606060; background-color: #f1e2ad; }
+.sf11b18 {color: #606060; background-color: #ffaa82; }
+.sf11b19 {color: #606060; background-color: #c8816c; }
+.sf12b2 {color: #800000; background-color: #ffffff; }
+.sf12b5 {color: #800000; background-color: #0078d7; }
+.sf12b14 {color: #800000; background-color: #ffa0a0; }
+.sf12b16 {color: #800000; background-color: #f1e2ad; }
+.sf12b18 {color: #800000; background-color: #ffaa82; }
+.sf12b19 {color: #800000; background-color: #c8816c; }
+.sf13b2 {color: #0080c0; background-color: #ffffff; }
+.sf13b5 {color: #0080c0; background-color: #0078d7; }
+.sf13b14 {color: #0080c0; background-color: #ffa0a0; }
+.sf13b16 {color: #0080c0; background-color: #f1e2ad; }
+.sf13b18 {color: #0080c0; background-color: #ffaa82; }
+.sf13b19 {color: #0080c0; background-color: #c8816c; }
+.sf15b2 {color: #000000; background-color: #ffffff; }
+.sf15b5 {color: #000000; background-color: #0078d7; }
+.sf15b14 {color: #000000; background-color: #ffa0a0; }
+.sf15b16 {color: #000000; background-color: #f1e2ad; }
+.sf15b18 {color: #000000; background-color: #ffaa82; }
+.sf15b19 {color: #000000; background-color: #c8816c; }
+.sf17b2 {color: #000000; background-color: #ffffff; }
+.sf17b5 {color: #000000; background-color: #0078d7; }
+.sf17b14 {color: #000000; background-color: #ffa0a0; }
+.sf17b16 {color: #000000; background-color: #f1e2ad; }
+.sf17b18 {color: #000000; background-color: #ffaa82; }
+.sf17b19 {color: #000000; background-color: #c8816c; }
+.sf20b2 {color: #000080; background-color: #ffffff; }
+.sf20b5 {color: #000080; background-color: #0078d7; }
+.sf20b14 {color: #000080; background-color: #ffa0a0; }
+.sf20b16 {color: #000080; background-color: #f1e2ad; }
+.sf20b18 {color: #000080; background-color: #ffaa82; }
+.sf20b19 {color: #000080; background-color: #c8816c; }
+.sf21b2 {color: #0080c0; background-color: #ffffff; }
+.sf21b5 {color: #0080c0; background-color: #0078d7; }
+.sf21b14 {color: #0080c0; background-color: #ffa0a0; }
+.sf21b16 {color: #0080c0; background-color: #f1e2ad; }
+.sf21b18 {color: #0080c0; background-color: #ffaa82; }
+.sf21b19 {color: #0080c0; background-color: #c8816c; }
+.sf3b2i {color: #ababab; background-color: #ffffff; }
+.sf3b5i {color: #005190; background-color: #0078d7; }
+.sf3b14i {color: #ab6b6b; background-color: #ffa0a0; }
+.sf3b16i {color: #a19774; background-color: #f1e2ad; }
+.sf3b18i {color: #ab7257; background-color: #ffaa82; }
+.sf3b19i {color: #865749; background-color: #c8816c; }
+.sf6b2i {color: #ffffff; background-color: #ffffff; }
+.sf6b5i {color: #54a4e4; background-color: #0078d7; }
+.sf6b14i {color: #ffbfbf; background-color: #ffa0a0; }
+.sf6b16i {color: #f5ebc8; background-color: #f1e2ad; }
+.sf6b18i {color: #ffc6ab; background-color: #ffaa82; }
+.sf6b19i {color: #daaa9c; background-color: #c8816c; }
+.sf7b2i {color: #ababff; background-color: #ffffff; font-weight: bold; }
+.sf7b5i {color: #0051e4; background-color: #0078d7; font-weight: bold; }
+.sf7b14i {color: #ab6bbf; background-color: #ffa0a0; font-weight: bold; }
+.sf7b16i {color: #a197c8; background-color: #f1e2ad; font-weight: bold; }
+.sf7b18i {color: #ab72ab; background-color: #ffaa82; font-weight: bold; }
+.sf7b19i {color: #86579c; background-color: #c8816c; font-weight: bold; }
+.sf8b2i {color: #d5abd5; background-color: #ffffff; }
+.sf8b5i {color: #2a51bb; background-color: #0078d7; }
+.sf8b14i {color: #d56b96; background-color: #ffa0a0; }
+.sf8b16i {color: #cc979f; background-color: #f1e2ad; }
+.sf8b18i {color: #d57282; background-color: #ffaa82; }
+.sf8b19i {color: #b15772; background-color: #c8816c; }
+.sf9b2i {color: #abd5ab; background-color: #ffffff; }
+.sf9b5i {color: #007a90; background-color: #0078d7; }
+.sf9b14i {color: #ab966b; background-color: #ffa0a0; }
+.sf9b16i {color: #a1c274; background-color: #f1e2ad; }
+.sf9b18i {color: #ab9d57; background-color: #ffaa82; }
+.sf9b19i {color: #868149; background-color: #c8816c; }
+.sf10b2i {color: #ffabab; background-color: #ffffff; }
+.sf10b5i {color: #545190; background-color: #0078d7; }
+.sf10b14i {color: #ff6b6b; background-color: #ffa0a0; }
+.sf10b16i {color: #f59774; background-color: #f1e2ad; }
+.sf10b18i {color: #ff7257; background-color: #ffaa82; }
+.sf10b19i {color: #da5749; background-color: #c8816c; }
+.sf11b2i {color: #cbcbcb; background-color: #ffffff; }
+.sf11b5i {color: #1f71b0; background-color: #0078d7; }
+.sf11b14i {color: #cb8b8b; background-color: #ffa0a0; }
+.sf11b16i {color: #c1b794; background-color: #f1e2ad; }
+.sf11b18i {color: #cb9277; background-color: #ffaa82; }
+.sf11b19i {color: #a67769; background-color: #c8816c; }
+.sf12b2i {color: #d5abab; background-color: #ffffff; }
+.sf12b5i {color: #2a5190; background-color: #0078d7; }
+.sf12b14i {color: #d56b6b; background-color: #ffa0a0; }
+.sf12b16i {color: #cc9774; background-color: #f1e2ad; }
+.sf12b18i {color: #d57257; background-color: #ffaa82; }
+.sf12b19i {color: #b15749; background-color: #c8816c; }
+.sf13b2i {color: #abd5eb; background-color: #ffffff; }
+.sf13b5i {color: #007ad0; background-color: #0078d7; }
+.sf13b14i {color: #ab96aa; background-color: #ffa0a0; }
+.sf13b16i {color: #a1c2b3; background-color: #f1e2ad; }
+.sf13b18i {color: #ab9d96; background-color: #ffaa82; }
+.sf13b19i {color: #868187; background-color: #c8816c; }
+.sf15b2i {color: #ababab; background-color: #ffffff; }
+.sf15b5i {color: #005190; background-color: #0078d7; }
+.sf15b14i {color: #ab6b6b; background-color: #ffa0a0; }
+.sf15b16i {color: #a19774; background-color: #f1e2ad; }
+.sf15b18i {color: #ab7257; background-color: #ffaa82; }
+.sf15b19i {color: #865749; background-color: #c8816c; }
+.sf17b2i {color: #ababab; background-color: #ffffff; }
+.sf17b5i {color: #005190; background-color: #0078d7; }
+.sf17b14i {color: #ab6b6b; background-color: #ffa0a0; }
+.sf17b16i {color: #a19774; background-color: #f1e2ad; }
+.sf17b18i {color: #ab7257; background-color: #ffaa82; }
+.sf17b19i {color: #865749; background-color: #c8816c; }
+.sf20b2i {color: #ababd5; background-color: #ffffff; }
+.sf20b5i {color: #0051bb; background-color: #0078d7; }
+.sf20b14i {color: #ab6b96; background-color: #ffa0a0; }
+.sf20b16i {color: #a1979f; background-color: #f1e2ad; }
+.sf20b18i {color: #ab7282; background-color: #ffaa82; }
+.sf20b19i {color: #865772; background-color: #c8816c; }
+.sf21b2i {color: #abd5eb; background-color: #ffffff; }
+.sf21b5i {color: #007ad0; background-color: #0078d7; }
+.sf21b14i {color: #ab96aa; background-color: #ffa0a0; }
+.sf21b16i {color: #a1c2b3; background-color: #f1e2ad; }
+.sf21b18i {color: #ab9d96; background-color: #ffaa82; }
+.sf21b19i {color: #868187; background-color: #c8816c; }
+.ln {text-align: right; word-break: normal; color: #000000; background-color: #f0f0f0;}
+-->
+</style>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" style="width:100%;">
+<colgroup>
+<col style="width: 0.5em;" />
+<col style="width: calc(100vw / 2 - 0.5em);" />
+<col style="width: 0.5em;" />
+<col style="width: calc(100vw / 2 - 0.5em);" />
+</colgroup>
+<thead>
+<tr>
+<th colspan="2" class="title">C:\Users\thumb\Documents\Projects\web-training-2023\all-projects\03-user-authentication\views\customer-number.aspx.vr</th>
+<th colspan="2" class="title">C:\Users\thumb\Documents\Projects\web-training-2023\all-projects\04-global-error-handling\views\customer-number.aspx.vr</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">Using System</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">Using System</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">Using System.Data</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">Using System.Data</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">Using System.Configuration</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">Using System.Configuration</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">Using System.Collections</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">Using System.Collections</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">Using System.Web</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">Using System.Web</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">Using System.Web.Security</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">Using System.Web.Security</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">Using System.Web.UI</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">Using System.Web.UI</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">Using System.Web.UI.WebControls</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">Using System.Web.UI.WebControls</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">Using System.Web.UI.WebControls.WebParts</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">Using System.Web.UI.WebControls.WebParts</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">Using System.Web.UI.HtmlControls</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">Using System.Web.UI.HtmlControls</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">BegClass views_customer_number Partial(*Yes) Access(*Public) Extends(System.Web.UI.Page)</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">BegClass views_customer_number Partial(*Yes) Access(*Public) Extends(System.Web.UI.Page)</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; BegSr Page_Load Access(*Private) Event(*This.Load)</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; BegSr Page_Load Access(*Private) Event(*This.Load)</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; DclSrParm sender Type(*Object)</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; DclSrParm sender Type(*Object)</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; DclSrParm e Type(System.EventArgs)</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; DclSrParm e Type(System.EventArgs)</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; // Use this URL to show form data with httpbin.</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; // Use this URL to show form data with httpbin.</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; // PostBackUrl="https://httpbin.org/post"/<wbr>&gt;</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; // PostBackUrl="https://httpbin.org/post"/<wbr>&gt;</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; *This.Title = "Get customer number"</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; *This.Title = "Get customer number"</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; DclFld CurrentPage Type(*String) </span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; DclFld CurrentPage Type(*String) </span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; CurrentPage = (*This.Master *As MasterPageNav).ChildPage &nbsp;// Gets current content page in this format: ~/views/Index.aspx</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; CurrentPage = (*This.Master *As MasterPageNav).ChildPage &nbsp;// Gets current content page in this format: ~/views/Index.aspx</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; DclFld CustomerNumber Type(*Integer4) </span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; DclFld CustomerNumber Type(*Integer4) </span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; </span>&nbsp;</code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; </span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; If Request['test'] &lt;&gt; *Nothing </span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; If Request['test'] &lt;&gt; *Nothing </span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; buttonPostBackUrl.PostBackUrl = 'https://httpbin.org/post'</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; buttonPostBackUrl.PostBackUrl = 'https://httpbin.org/post'</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; EndIf </span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; EndIf </span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; If Request['nf'] &lt;&gt; *Nothing </span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; If Request['nf'] &lt;&gt; *Nothing </span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CustomerNumber = Request['nf'].ToString()</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CustomerNumber = Request['nf'].ToString()</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; customvalidatorCustomerNumber.IsValid = *False </span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; customvalidatorCustomerNumber.IsValid = *False </span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; customvalidatorCustomerNumber.ErrorMess<wbr>age = String.Format('Customer {0} not found', CustomerNumber) </span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; customvalidatorCustomerNumber.ErrorMess<wbr>age = String.Format('Customer {0} not found', CustomerNumber) </span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; textboxCustomerNumber.Text = CustomerNumber</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; textboxCustomerNumber.Text = CustomerNumber</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; EndIf</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; EndIf</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; If (NOT Page.IsPostBack)</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; If (NOT Page.IsPostBack)</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Called the first time that the page is loaded.</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Called the first time that the page is loaded.</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; Else</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; Else</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Called subsequent times that the page is displayed.</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Called subsequent times that the page is displayed.</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; EndIf</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; EndIf</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; EndSr</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; EndSr</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; BegSr Page_Unload Access(*Private) Event(*This.Unload)</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; BegSr Page_Unload Access(*Private) Event(*This.Unload)</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; DclSrParm sender Type(*Object)</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; DclSrParm sender Type(*Object)</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; DclSrParm e Type(System.EventArgs)</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; DclSrParm e Type(System.EventArgs)</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; //</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; //</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; // Called when the page is unloaded.</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; // Called when the page is unloaded.</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; //</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; //</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; EndSr</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; EndSr</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; BegSr buttonPostBack_Click Access(*Private) Event(*This.buttonPostBack.Click)</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; BegSr buttonPostBack_Click Access(*Private) Event(*This.buttonPostBack.Click)</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; DclSrParm sender Type(*Object)</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; DclSrParm sender Type(*Object)</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; DclSrParm e Type(System.EventArgs)</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; DclSrParm e Type(System.EventArgs)</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d1" href="#d1">.</a></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; ">&nbsp; &nbsp; &nbsp; &nbsp; Throw *New ArgumentException("Testing error handling") </span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; ">&nbsp; &nbsp; &nbsp; </span>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; Session['customer-number'] = textboxCustomerNumber.Text</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; Session['customer-number'] = textboxCustomerNumber.Text</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; Response.Redirect('customer-form.aspx')<wbr></span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; &nbsp; &nbsp; Response.Redirect('customer-form.aspx')<wbr> &nbsp; &nbsp; </span></code></td>
+</tr>
+<tr>
+<td class="ln"><a name="d2" href="#d2">.</a></td><td style="color: #000000; background-color: #efcb05; "><code>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td style="color: #000000; background-color: #efcb05; "><code><span style="color: #000000; background-color: #efcb05; ">&nbsp; &nbsp; &nbsp; &nbsp; </span>&nbsp;</code></td>
+<td class="ln"></td><td style="color: #000000; background-color: #c0c0c0; "><code>&nbsp;</code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; EndSr</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">&nbsp; &nbsp; EndSr</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">EndClass</span></code></td>
+<td class="ln"></td><td class="sf3b2"><code><span class="sf3b2">EndClass</span></code></td>
+</tr>
+<tr>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+<td class="ln"></td><td class="sf3b2"><code>&nbsp;</code></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
